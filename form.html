@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join FlashBike DZ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Join FlashBike DZ and be part of the eco-friendly delivery movement in Annaba, Algeria.">
+</head>
+
+<body class="bg-black text-white font-sans antialiased transition-all duration-300">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-black shadow-lg z-50" dir="ltr">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="c:/Users/Dell vPro/Desktop/flashbike project/Picsart_25-10-13_11-19-12-056.png" alt="FlashBike Logo" class="w-20 h-18 rounded-full">
+        <h1 class="text-2xl font-bold tracking-wide">
+          FLASHBIKE <span class="font-light">Delivery</span>
+        </h1>
+      </div> 
+
+
+      <div class="flex items-center gap-6">
+        <!-- Home -->
+        <a href="index.html" class="text-white hover:text-gray-400 transition text-lg" data-key="Home">Home</a>
+
+        <!-- Language Button -->
+        <div class="relative">
+          <button id="langBtn" class="text-white font-medium border-b-2 border-transparent hover:border-white transition duration-300 focus:outline-none" data-key="Language">
+            Language ▾
+          </button>
+
+          <!-- Dropdown -->
+          <div id="langMenu" class="hidden absolute right-0 bg-white text-black rounded-lg mt-2 shadow-lg w-40">
+            <button class="w-full text-left px-4 py-2 hover:bg-gray-200" data-lang="en">
+               <img src="c:\Users\Dell vPro\Downloads\united-states.png" alt="English" class="w-5 h-5 rounded-sm">English</button>
+            <button class="w-full text-left px-4 py-2 hover:bg-gray-200" data-lang="ar">
+              <img src="c:\Users\Dell vPro\Downloads\saudi-arabia.png" alt="Arabic" class="w-5 h-5 rounded-sm">العربية</button>
+            <button class="w-full text-left px-4 py-2 hover:bg-gray-200" data-lang="fr">
+              <img src="c:\Users\Dell vPro\Downloads\france.png" alt="French" class="w-5 h-5 rounded-sm">Français</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-32 pb-20 px-6 sm:px-10 md:px-16 max-w-4xl mx-auto">
+    <form id="joinForm" action="https://formspree.io/f/xyzbblop" method="POST" class="bg-white text-black rounded-2xl p-8 shadow-xl space-y-6">
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2" data-key="firstName">First Name</label>
+          <input type="text" name="first_name" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" data-key="lastName">Last Name</label>
+          <input type="text" name="last_name" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2" data-key="email">Email</label>
+          <input type="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" data-key="phone">Phone Number</label>
+          <input type="tel" name="phone_number" required placeholder="+213 6XXXXXXXX" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2" data-key="birthDate">Date of Birth</label>
+          <input type="date" name="date_of_birth" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" data-key="birthPlace">Place of Birth</label>
+          <input type="text" name="place_of_birth" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2" data-key="state">State</label>
+        <input type="text" name="state" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2" data-key="address">Address</label>
+        <input type="text" name="address" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2" data-key="nationalId">National Identification Number</label>
+        <input type="text" name="national_id" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+      </div>
+
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-3" data-key="bikeType">Type of Bicycle</label>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <label class="flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+              <input type="radio" name="bicycle_type" value="Electric Bike" required class="accent-black">
+              <span data-key="electric">Electric Bike</span>
+            </label>
+            <label class="flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+              <input type="radio" name="bicycle_type" value="Normal Bike" required class="accent-black">
+              <span data-key="normal">Normal Bike</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" data-key="work">Current Work/Study</label>
+          <input type="text" name="work_study" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black">
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2" data-key="opinion">Your Opinion on the Project Idea (Optional)</label>
+        <textarea name="opinion" rows="4" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-black text-white py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition duration-300" data-key="submit">
+        Submit Application
+      </button>
+
+      <!-- Thank You Message -->
+      <div id="thankYouMessage" class="hidden mt-10 text-center text-green-600 text-xl font-semibold" data-key="thanks">
+        Thank you, we'll call you very soon.
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-black text-center text-gray-400 py-6">
+    <p>© 2025 FlashBike DZ — All Rights Reserved</p>
+  </footer>
+
+  <!-- LANGUAGE + FORM SCRIPT -->
+  <script>
+    const translations = {
+      en: {
+        Language:"language ▾", Home: "Home",   
+        firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone Number",
+        birthDate: "Date of Birth", birthPlace: "Place of Birth", state: "State", address: "Address",
+        nationalId: "National Identification Number", idLink: "National ID Card Photo Link",
+        bikeType: "Type of Bicycle", electric: "Electric Bike", normal: "Normal Bike",
+        work: "Current Work/Study", opinion: "Your Opinion on the Project Idea (Optional)",
+        submit: "Submit Application", thanks: "Thank you, we'll call you very soon."
+      },
+      ar: {
+        Language:"اللغة ▾", Home: "الرئيسية",
+        firstName: "الاسم الأول", lastName: "اللقب", email: "البريد الإلكتروني", phone: "رقم الهاتف",
+        birthDate: "تاريخ الميلاد", birthPlace: "مكان الميلاد", state: "الولاية", address: "العنوان",
+        nationalId: "رقم التعريف الوطني", idLink: "رابط صورة بطاقة التعريف الوطنية",
+        bikeType: "نوع الدراجة", electric: "دراجة كهربائية", normal: "دراجة عادية",
+        work: "العمل / الدراسة الحالية", opinion: "رأيك في فكرة المشروع (اختياري)",
+        submit: "إرسال الطلب", thanks: "شكرًا لك، سنتصل بك قريبًا إن شاء الله."
+      },
+      fr: {
+        Language:"Langue ▾", Home: "Accueil",
+        firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Numéro de téléphone",
+        birthDate: "Date de naissance", birthPlace: "Lieu de naissance", state: "Wilaya", address: "Adresse",
+        nationalId: "Numéro d'identité nationale", idLink: "Lien de la carte d'identité nationale",
+        bikeType: "Type de vélo", electric: "Vélo électrique", normal: "Vélo normal",
+        work: "Travail / Études actuelles", opinion: "Votre avis sur le projet (optionnel)",
+        submit: "Envoyer la demande", thanks: "Merci, nous vous appellerons très bientôt."
+      }
+    };
+
+    const langBtn = document.getElementById("langBtn");
+    const langMenu = document.getElementById("langMenu");
+
+    langBtn.addEventListener("click", () => langMenu.classList.toggle("hidden"));
+
+    document.querySelectorAll("#langMenu button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        localStorage.setItem("lang", lang);
+        updateText(lang);
+        langMenu.classList.add("hidden");
+      });
+    });
+
+    function updateText(lang) {
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.textContent = translations[lang][key];
+      });
+    }
+
+    // Load saved language
+    const savedLang = localStorage.getItem("lang") || "en";
+    updateText(savedLang);
+    document.documentElement.lang = savedLang;
+    document.documentElement.dir = savedLang === "ar" ? "rtl" : "ltr";
+
+    // Form submission
+    const form = document.getElementById("joinForm");
+    const thankYou = document.getElementById("thankYouMessage");
+
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, { method: form.method, body: formData, headers: { Accept: "application/json" } });
+      if (response.ok) {
+        form.reset();
+        thankYou.classList.remove("hidden");
+      }
+    });
+  </script>
+</body>
+</html>

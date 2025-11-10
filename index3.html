@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlashBike DZ</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="FlashBike DZ — eco-friendly, fast, and reliable bicycle delivery service based in Annaba, Algeria." />
+  <meta name="keywords" content="FlashBike DZ, bicycle delivery, Annaba delivery, eco delivery, FlashBike Algeria" />
+  <meta name="author" content="FlashBike DZ" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+</head>
+<body class="bg-black text-white font-sans antialiased">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="fixed top-0 left-0 w-full bg-black shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="assets/Picsart_25-10-13_11-19-12-056.png" alt="FlashBike Logo" class="w-20 h-18 rounded-full">
+        <h1 class="text-2xl font-bold tracking-wide">
+          FLASHBIKE <span class="font-light">Delivery</span>
+        </h1>
+      </div>
+
+       <!-- Hamburger Button (Mobile) -->
+    <button id="menu-btn" class="text-white text-3xl md:hidden focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Nav Links -->
+    <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center absolute md:static top-[70px] left-0 w-full md:w-auto bg-black md:bg-transparent md:space-x-4 text-white text-base transition-all duration-300 ease-in-out">
+      <a href="#home" class="block px-6 py-2 hover:text-gray-400 transition">Accueil</a>
+      <a href="#about" class="block px-6 py-2 hover:text-gray-400 transition">À propos de nous</a>
+      <a href="#services" class="block px-6 py-2 hover:text-gray-400 transition">Services</a>
+      <a href="#join" class="block px-6 py-2 hover:text-gray-400 transition">Rejoignez-nous</a>
+      <a href="#contact" class="block px-6 py-2 hover:text-gray-400 transition">Contact</a>
+      
+       <!-- Language Selector -->
+<div class="relative">
+  <button id="langBtn" 
+          class="text-white font-medium border-b-2 border-transparent hover:border-white transition duration-300 focus:outline-none">
+    Langue ▾
+  </button>
+
+  <!-- Dropdown -->
+  <div id="langMenu" 
+       class="hidden absolute bg-white text-black rounded-lg mt-2 shadow-lg w-40">
+       <a href="index.html" class="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 border-b border-black/20">
+       <img src="assets/united-states.png" alt="English" class="w-5 h-5 rounded-sm"> English
+       </a>
+       <a href="index2.html" class="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 border-b border-black/20">
+       <img src="assets/saudi-arabia.png" alt="Arabic" class="w-5 h-5 rounded-sm"> العربية
+       </a>
+       <a href="index3.html" class="flex items-center gap-2 px-4 py-2 hover:bg-gray-300">
+       <img src="assets/france.png" alt="French" class="w-5 h-5 rounded-sm">Français
+       </a>
+  </div>
+</div>
+      </nav>
+    </div>
+  </header>
+
+<!-- Script for Mobile Menu -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  let isOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('menu-open');
+
+    // Change icon between ☰ and ✖
+    menuBtn.textContent = isOpen ? '✖' : '☰';
+  });
+</script>
+
+
+
+<!-- SPLIT REVEAL OVERLAY -->
+<div id="overlay-left" class="fixed inset-y-0 left-0 w-1/2 bg-white z-50"></div>
+<div id="overlay-right" class="fixed inset-y-0 right-0 w-1/2 bg-white z-50"></div>
+
+<!-- HERO SECTION -->
+<section id="home" class="relative flex flex-col justify-center px-6 sm:px-10 md:px-16 py-16 md:py-24 bg-black overflow-hidden">
+
+  <!-- Hero Image -->
+  <div class="flex justify-center items-center w-full">
+    <img src="assets/AI_Generated_Image_2025-10-17.png" 
+         alt="FlashBike Delivery Rider"
+         class="w-[1200px] h-[500px] rounded-[63px] object-cover opacity-70" />
+  </div>
+
+ <!-- Text Block -->
+  <div class="absolute left-10 md:left-20 top-[40%] z-10 max-w-xl">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight md:leading-snug text-white">
+      Vos besoins à portée de main
+    </h2>
+
+    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8">
+      Avec soin et intention par <span class="text-black font-bold">FLASHBIKE</span>
+    </p>
+
+    <a href="join.html" class="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300">
+      Rejoignez-nous
+    </a>
+  </div>
+</section>
+
+<!-- Custom Animation Styles -->
+<style>
+  /* Split reveal: panels slide outward */
+  #overlay-left {
+    animation: slideLeft 1.3s ease-in-out forwards;
+    animation-delay: 0.4s;
+  }
+
+  #overlay-right {
+    animation: slideRight 1.3s ease-in-out forwards;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes slideLeft {
+    0% { transform: translateX(0); opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes slideRight {
+    0% { transform: translateX(0); opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; visibility: hidden; }
+  }
+</style>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="relative bg-black text-white py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
+
+   <!-- Section Title (Top Center) -->
+  <div class="text-center mb-16">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide">
+      Qui nous sommes
+    </h2>
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16 max-w-6xl mx-auto">
+
+    <!-- Text Content -->
+    <div class="md:w-1/2 animate-on-scroll text-center md:text-left">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">
+        Roulez pour une raison
+      </h3>
+
+      <p class="text-white-300 text-base sm:text-lg leading-relaxed sm:leading-loose md:leading-loose mb-6">
+        <span class="text-white font-bold">FLASHBIKE</span> Né à Annaba avec une seule mission : rendre la livraison rapide, fiable,et respectueuse de l’environnement. 
+         Nous livrons des repas, des cadeaux, des courses, des articles ménagers et des colis d’un endroit à un autre.
+         Besoin de payer une facture, acheter un billet ou envoyer quelque chose rapidement ?
+         Nous sommes là pour vous — toujours sur deux roues, toujours avec soin.
+         Chaque course est un pas de plus vers une ville plus verte et une meilleure façon de livrer.
+      </p>
+
+      <p class="text-gray-200 italic text-sm sm:text-base md:text-lg">
+        “Rapide. Fiable. Écologique.”
+      </p>
+    </div>
+
+    <!-- Right: 3 Images -->
+    <div class="md:w-1/2 grid grid-cols-2 gap-4 animate-on-scroll self-end">
+      <img src="assets/IMG_9792.JPG" alt="FlashBike Delivery 1" class="w-full h-64 rounded-[30px] object-cover shadow-lg opacity-90">
+      <img src="assets/Picsart_25-11-01_11-21-45-509.jpg"  alt= "FlashBike Delivery 2" class="w-full h-64 rounded-[30px] object-cover shadow-lg opacity-90">
+      <img src="assets/Picsart_25-11-01_11-19-36-898.jpg" alt="FlashBike Delivery 3" class="col-span-2 w-full h-52 sm:h-64 rounded-[30px] object-cover shadow-lg opacity-90">
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Animation Script + Styles -->
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+</style>
+<script>
+  const langBtn = document.getElementById('langBtn');
+  const langMenu = document.getElementById('langMenu');
+
+  langBtn.addEventListener('click', () => {
+    langMenu.classList.toggle('hidden');
+  });
+
+  // Optional: close menu when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+</script>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="bg-white text-black py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <!-- Heading + Paragraph -->
+  <div class="text-center mb-12 animate-on-scroll">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Ce que nous livrons</h2>
+    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+      Rapides, fiables et respectueux de l’environnement — nos livreurs transportent toutes sortes de biens et de services à travers Annaba, animés par le soin et la détermination.
+    </p>
+  </div>
+
+  <!-- Scrollable Services -->
+  <div id="serviceSlider" class="flex overflow-x-auto scroll-smooth gap-6 pb-6 no-scrollbar">
+    <!-- Each Card has animation -->
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🍔</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Nourriture</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Repas frais livrés rapidement et avec soin — parce que votre temps compte.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🎁</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Cadeaux</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Faites plaisir à quelqu’un avec une livraison de cadeaux rapide et sécurisée partout à Annaba.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🛒</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Épicerie</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Besoin d’essentiels ? Nous livrons vos courses directement à votre porte.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🏠</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Articles ménagers</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Nous livrons ce dont votre maison a besoin — en toute sécurité et à l’heure.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">📦</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Colis (Sociétés de livraison)</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Collectes et dépôts auprès de toutes les grandes sociétés de livraison — rapide et fiable.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">💳</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Paiement de factures</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Payez vos factures ou achetez des billets — nous gérons les courses pour que vous puissiez vous détendre.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🚴‍♂️</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Livraison de colis</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        D’un endroit à un autre — livraison rapide et fiable à chaque fois.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">⚙️</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Pièces détachées</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Recevez vos pièces de rechange ou mécaniques sans délai.
+      </p>
+    </div>
+
+    <div class="min-w-[280px] sm:min-w-[320px] bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-start animate-on-scroll">
+      <div class="w-14 h-14 mb-4 bg-white/20 rounded-full flex items-center justify-center">
+        <span class="text-2xl">🎟️</span>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-center">Achat de billets</h3>
+      <p class="text-gray-300 text-sm leading-relaxed text-center">
+        Achetez vos billets facilement pour des événements, les transports ou des activités — rapide, sûr et pratique.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STYLES -->
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Animation */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<!-- Custom Styles -->
+<style>
+  .service-card {
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    flex: 0 0 calc(33.333% - 1rem); /* show 3 at a time */
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 1024px) {
+    .service-card {
+      flex: 0 0 calc(50% - 1rem); /* show 2 at a time */
+    }
+  }
+
+  @media (max-width: 640px) {
+    .service-card {
+      flex: 0 0 100%; /* show 1 at a time */
+    }
+  }
+</style>
+
+<!-- JOIN US SECTION -->
+<section id="join" class="bg-black text-white py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 animate-on-scroll">
+    
+    <!-- LEFT: Image -->
+    <div class="md:w-1/2 flex justify-center">
+      <img src="assets/IMG_5249.jpg" alt="Join FlashBike Riders" class="col-span-2 w-full h-52 sm:h-64 rounded-[30px] object-cover shadow-lg opacity-90">
+    </div>
+   
+
+    <!-- RIGHT: Text -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+        Rejoignez l'équipe
+      </h2>
+      <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
+        Devenez membre de <span class="text-white font-bold">FLASHBIKE</span> une équipe grandissante de livreurs qui façonnent l’avenir de la livraison écologique à Annaba.
+        Que vous recherchiez un travail flexible, de nouvelles expériences ou un moyen d’aider votre communauté, votre aventure commence ici.
+      </p>
+      <a href="form.html" 
+         class="inline-block bg-white text-black px-8 py-3 rounded-full text-lg font-semibold 
+                hover:bg-gray-200 transition duration-300">
+        Rejoignez-nous maintenant
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Scroll Animation -->
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+</style>
+<!-- APP SECTION -->
+<section id="app" class="bg-white text-black py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 animate-on-scroll">
+
+    <!-- Left Text -->
+    <div class="text-center md:text-left md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+       Notre application officielle <span class="text-black font-bold">FLASHBIKE</span> 
+      </h2>
+      <p class="text-gray-600 text-base sm:text-lg mb-8">
+        Bientôt disponible sur vos boutiques d’applications préférées — restez à l’écoute pour une expérience de livraison plus rapide et plus intelligente directement depuis votre téléphone.
+      </p>
+
+      <!-- App Buttons -->
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <div class="flex items-center bg-gray-200 text-gray-500 rounded-lg px-4 py-2 cursor-not-allowed">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="App Store" class="w-6 h-6 mr-2">
+          <span class="text-sm font-semibold">App Store</span>
+        </div>
+
+        <div class="flex items-center bg-gray-200 text-gray-500 rounded-lg px-4 py-2 cursor-not-allowed">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" class="w-6 h-6 mr-2">
+          <span class="text-sm font-semibold">Google Play</span>
+        </div>
+      </div>
+
+      <!-- Coming Soon Label -->
+<div class="mt-8 inline-block bg-gradient-to-r from-black to-gray-700 text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg animate-pulse">
+   Bientôt disponible
+</div>
+    </div>
+
+      <!-- Right Phone Mockup (Black + Reflection + White Glow) -->
+    <div class="md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0">
+      <div class="relative">
+        <div class="w-[220px] h-[440px] rounded-[30px] bg-black border-4 border-gray-800 shadow-2xl flex flex-col items-center justify-center gap-4 p-6 text-center overflow-hidden">
+
+          <!-- Reflection Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent rounded-[30px] pointer-events-none"></div>
+
+          <!-- Glowing Logo -->
+          <img src="assets/Picsart_25-10-13_11-19-12-056.png" 
+               alt="FlashBike Logo" 
+               class="w-32 h-30 animate-white-glow z-10">
+
+          <!-- Coming Soon Text -->
+          <p class="text-white font-semibold text-lg mt-2 z-10">Bientôt disponible...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Glow Animation -->
+<style>
+@keyframes whiteGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
+}
+.animate-white-glow {
+  animation: whiteGlow 2s infinite ease-in-out;
+}
+</style>
+  
+
+
+
+
+<!-- FEEDBACK SECTION -->
+<section id="feedback" class="bg-white text-black py-20 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Nous valorisons vos retours</h2>
+    <p class="text-gray-600 mb-10">
+     Partagez vos impressions avec nous — vos retours nous aident à nous améliorer et à mieux vous servir.
+    </p>
+
+    <form id="feedbackForm" action="https://formspree.io/f/xyzbblop" method="POST" class="bg-gray-50 p-8 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg">
+      <div class="grid gap-6">
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-left font-semibold mb-2">Nom</label>
+          <input type="text" id="name" name="name" required 
+                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition">
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-left font-semibold mb-2">Email</label>
+          <input type="email" id="email" name="_replyto" required 
+                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition">
+        </div>
+
+        <!-- Feedback -->
+        <div>
+          <label for="message" class="block text-left font-semibold mb-2">Votre avis</label>
+          <textarea id="message" name="message" rows="5" required 
+                    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" 
+                class="w-full bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-900 transition">
+          Envoyer l'avis
+        </button>
+      </div>
+
+      <!-- Success / Error Message -->
+      <p id="formMessage" class="mt-6 text-green-600 font-medium hidden">Thanks for your feedback!</p>
+    </form>
+  </div>
+
+  <script>
+    const feedbackForm = document.getElementById('feedbackForm');
+    const formMessage = document.getElementById('formMessage');
+
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(feedbackForm);
+
+      try {
+        const response = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formMessage.textContent = "Thanks for your feedback!";
+          formMessage.classList.remove('hidden');
+          feedbackForm.reset();
+        } else {
+          formMessage.textContent = "Oops! Something went wrong. Please try again.";
+          formMessage.classList.remove('hidden');
+          formMessage.classList.replace('text-green-600', 'text-red-600');
+        }
+      } catch (error) {
+        formMessage.textContent = "Connection error. Please try again.";
+        formMessage.classList.remove('hidden');
+        formMessage.classList.replace('text-green-600', 'text-red-600');
+      }
+    });
+  </script>
+</section>
+
+<!-- FOUNDERS SECTION -->
+<section id="founders" class="bg-black text-white py-20 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto text-center animate-on-scroll">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">Rencontrez nos fondateurs</h2>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+      <!-- Founder 1 -->
+      <div class="text-center md:w-1/2">
+        <div class="relative w-48 h-48 mx-auto mb-6">
+          <img src="assets/Picsart_25-11-06_18-39-32-320.jpg" alt="Benhacine Zakaria" 
+               class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white/20 transition-transform duration-300 hover:scale-105">
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Benhacine Zakaria</h3>
+        <p class="text-gray-400 font-medium mb-3">Fondateur</p>
+        <p class="text-gray-300 max-w-md mx-auto leading-relaxed">
+          Un entrepreneur visionnaire qui a fondé <span class="font-bold text-white">FLASHBIKE</span>  avec un objectif clair : révolutionner la livraison urbaine en alliant rapidité, durabilité et service client.
+          Zakaria dirige la mission pour faire de la livraison écologique une réalité quotidienne à Annaba.
+        </p>
+      </div>
+
+      <!-- Co-Founder -->
+      <div class="text-center md:w-1/2">
+        <div class="relative w-48 h-48 mx-auto mb-6">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Mihoub Mohamed Djebril" 
+               class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white/20 transition-transform duration-300 hover:scale-105">
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Mihoub Mohamed Djebril</h3>
+        <p class="text-gray-400 font-medium mb-3">Co-Fondateur</p>
+        <p class="text-gray-300 max-w-md mx-auto leading-relaxed">
+         Un innovateur digital et stratège créatif passionné par la technologie et l’impact.
+         Djebril façonne l’identité digitale de <span class="font-bold text-white">FLASHBIKE’s</span> assurant que la marque reste à la pointe grâce à l’innovation, au design et à une forte connexion avec la communauté.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Animation Style -->
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .animate-on-scroll.visible {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+</style>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="bg-black text-white py-20 px-6 sm:px-10 md:px-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 animate-on-scroll">
+
+    <!-- LEFT SIDE: Contact Info -->
+    <div class="md:w-1/2 text-center md:text-left space-y-6">
+      <!-- Logo -->
+      <div class="flex flex-col items-center md:items-start">
+        <img src="assets/Picsart_25-10-13_11-19-12-056.png" 
+             alt="FlashBike Logo" 
+             class="w-32 h-30 rounded-full shadow-lg mb-2">
+        <h2 class="text-2xl font-bold tracking-wide">
+          FLASHBIKE <span class="font-light">Delivery</span>
+        </h2>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center md:justify-start gap-6 mt-4">
+        <a href="https://www.instagram.com/flashbike_delivery/?__pwa=1" target="_blank" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-8 h-8">
+        </a>
+        <a href="https://www.tiktok.com/@flashbike_delivery?fbclid=PAZXh0bgNhZW0CMTEAAafRgSRbIaqIPG-qLTL-GrvLCmn4nUSGJzNpZ_mMh75ZXw5191NBTDPdk6n9uA_aem_rPWewdgqnD4OgOZkEC86VA" target="_blank" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+          <img src="assets/social-media.png" alt="TikTok" class="w-8 h-8">
+        </a>
+        <a href="https://web.facebook.com/profile.php?id=61562120396173&ref=_xav_ig_profile_page_web#" target="_blank" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+          <img src="assets/facebook (1).png" alt="Facebook" class="w-8 h-8">
+        </a>
+      </div>
+
+      <!-- Contact Numbers -->
+      <div class="mt-6 space-y-3 text-lg">
+         <p>
+          📞 <a href="tel:+213654795312" class="hover:text-gray-400 transition">0654 795 312</a>
+        </p> 
+         <p>
+          📞 <a href="tel:+213654795312" class="hover:text-gray-400 transition">0559 119 442</a>
+        </p>
+        <p>
+          💬  <a href="https://wa.me/213559119442" target="_blank" class="hover:text-green-400 transition">0559 119 442 (WhatsApp)</a>
+        </p>
+      </div>
+
+      <!-- Address -->
+      <div class="mt-4">
+        <p class="text-gray-400 text-base">📍 Orkids Centre d'innovation, Annaba, El Bouni, Algérie</p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Google Map -->
+    <div class="md:w-1/2 w-full h-80 md:h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-700">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.109076784949!2d7.734051709442125!3d36.86380787211321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f00969c62fc16d%3A0x8ae956d98af1d7c5!2sOrkids!5e0!3m2!1sfr!2sdz!4v1762289448100!5m2!1sfr!2sdz"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Optional smooth scroll animation -->
+<style>
+  #contact img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  #contact img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+</style>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white py-10 px-6 sm:px-10 md:px-16 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+    <!-- Left Side -->
+    <div class="text-center md:text-left space-y-3">
+      <h2 class="text-2xl font-bold tracking-wide">FLASHBIKE <span class="font-light">Delivery</span></h2>
+      <p class="text-gray-400 text-sm">Livrer ce dont vous avez besoin — rapide, fiable et écologique.</p>
+    </div>
+
+    <!-- Center: Quick Links -->
+    <div class="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
+      <a href="#home" class="hover:text-white transition">Accueil</a>
+      <a href="#about" class="hover:text-white transition"> À propos de nous</a>
+      <a href="#services" class="hover:text-white transition">Services</a>
+      <a href="#join" class="hover:text-white transition"> Rejoignez-nous</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
+    </div>
+
+    <!-- Right Side -->
+    <div class="text-center md:text-right text-gray-400 text-sm">
+      <p>© <span id="year"></span> FLASHBIKE DZ — Tous droits réservés</p>
+      <p>fait avec ❤️ à Annaba, Algérie</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Footer Script -->
+<script>
+  // Automatically update year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Smooth hover effects -->
+<style>
+  footer a {
+    position: relative;
+  }
+  footer a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  footer a:hover::after {
+    width: 100%;
+  }
+</style>
+
+
+<!-- Scroll Animation Script + Styles -->
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Scrollbar hidden for clean look */
+  #service-slider::-webkit-scrollbar {
+    display: none;
+  }
+  #service-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  // Wait until the entire page content is ready
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: uncomment this line to make animation trigger only once
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Observe all elements with the animation class
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+  });
+</script>
+
+
+</body>
+</html>
+
+
